@@ -5,11 +5,10 @@ import { Client } from 'colyseus.js';
 import { RoomAvailable } from 'colyseus.js/lib/Room';
 import qs from 'querystringify';
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Separator, Space, View } from '../../components';
+import { Box, Space, View } from '../../components';
 import { Header } from './components/Header';
 import { NameField } from './components/NameField';
 import { NewGameField } from './components/NewGameField';
-import { RoomsList } from './components/RoomsList';
 
 interface HomeScreenProps extends RouteComponentProps {}
 
@@ -86,10 +85,6 @@ export function HomeScreen({ navigate }: HomeScreenProps) {
                 }}
             >
                 <NewGameField onCreate={handleRoomCreate} />
-                <Space size="xxs" />
-                <Separator />
-                <Space size="xxs" />
-                <RoomsList rooms={rooms} onRoomClick={handleRoomClick} />
                 <Space size="xxs" />
             </Box>
         </View>
