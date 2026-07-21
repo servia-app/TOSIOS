@@ -29,7 +29,7 @@ export function NameField({}: NameFieldProps) {
             <View flex>
                 <img src={playerImage} alt="player" width={30} />
                 <Inline size="thin" />
-                <Text>Pick your name:</Text>
+                <Text>{name ? `Bonjour, ${name} !` : 'Choisissez votre nom :'}</Text>
             </View>
             <Space size="xs" />
             <Input value={name} placeholder="Name" maxLength={Constants.PLAYER_NAME_MAX} onChange={handleChange} />
