@@ -24,6 +24,8 @@ export function Header(): React.ReactElement {
                 }}
             >
                 <span
+                    translate="no"
+                    className="notranslate"
                     style={{
                         fontFamily: "'Luckiest Guy', cursive",
                         fontSize: 14,
@@ -34,6 +36,8 @@ export function Header(): React.ReactElement {
                     CLIPZY
                 </span>
                 <span
+                    translate="no"
+                    className="notranslate"
                     style={{
                         fontFamily: "'Luckiest Guy', cursive",
                         fontSize: 64,
