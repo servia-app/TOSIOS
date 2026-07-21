@@ -1,8 +1,7 @@
 import { Constants } from '@tosios/common';
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Space, Text, View } from '../../../components';
-import { titleImage } from '../../../images';
+import { View } from '../../../components';
 
 export function Header(): React.ReactElement {
     return (
@@ -11,7 +10,7 @@ export function Header(): React.ReactElement {
                 <title>{`${Constants.APP_TITLE} - Home`}</title>
                 <meta
                     name="description"
-                    content="The Open-Source IO Shooter is an open-source multiplayer game in the browser meant to be hostable, modifiable, and playable by anyone."
+                    content="Clipzy Rumble - Un jeu de combat multijoueur."
                 />
             </Helmet>
 
@@ -24,13 +23,16 @@ export function Header(): React.ReactElement {
                     maxWidth: '100%',
                 }}
             >
-                <img alt="TOSIOS" src={titleImage} />
-                <Space size="xs" />
-                <Text style={{ color: 'white', fontSize: 13 }}>
-                    An open-source multiplayer game in the browser meant to be hostable, modifiable, and playable by
-                    anyone.
-                </Text>
-                <Space size="xxs" />
+                <span
+                    style={{
+                        color: '#FF7A1A',
+                        fontSize: 40,
+                        fontWeight: 800,
+                        letterSpacing: 1,
+                    }}
+                >
+                    Clipzy Rumble
+                </span>
             </View>
         </>
     );
