@@ -25,13 +25,30 @@ export function Header(): React.ReactElement {
             >
                 <span
                     style={{
+                        fontFamily: "'Luckiest Guy', cursive",
+                        fontSize: 14,
                         color: '#FF7A1A',
-                        fontSize: 40,
-                        fontWeight: 800,
-                        letterSpacing: 1,
+                        letterSpacing: 4,
                     }}
                 >
-                    Clipzy Rumble
+                    CLIPZY
+                </span>
+                <span
+                    style={{
+                        fontFamily: "'Luckiest Guy', cursive",
+                        fontSize: 64,
+                        lineHeight: 1,
+                        marginTop: -4,
+                        background: 'linear-gradient(180deg, #FFD65C 0%, #FF7A1A 55%, #FF3D6E 100%)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextStroke: '3px #1a1414',
+                        backgroundClip: 'text',
+                        color: 'transparent',
+                        filter: 'drop-shadow(0 4px 0 #1a1414)',
+                        transform: 'rotate(-2deg)',
+                    }}
+                >
+                    RUMBLE
                 </span>
             </View>
         </>
