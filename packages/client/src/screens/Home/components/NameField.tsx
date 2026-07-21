@@ -1,7 +1,6 @@
 import { Constants } from '@tosios/common';
 import React, { useState } from 'react';
-import { Box, Button, Inline, Input, Space, Text, View } from '../../../components';
-import { playerImage } from '../../../images';
+import { Box, Button, Input, Space, Text, View } from '../../../components';
 
 interface NameFieldProps {}
 
@@ -27,8 +26,6 @@ export function NameField({}: NameFieldProps) {
             }}
         >
             <View flex>
-                <img src={playerImage} alt="player" width={30} />
-                <Inline size="thin" />
                 <Text>{name ? `Bonjour, ${name} !` : 'Choisissez votre nom :'}</Text>
             </View>
             <Space size="xs" />
