@@ -26,7 +26,7 @@ export function NewGameField({ onCreate }: NewGameFieldProps) {
     const [opened, setOpened] = useState(false);
     const [name, setName] = useState('');
     const [maxPlayers, setMaxPlayers] = useState(PlayersCountList[0].value);
-    const [map, setMap] = useState(MapsList[0].value);
+    const [map, setMap] = useState('gigantic');
     const [mode, setMode] = useState<GameMode>(GameModesList[0].value);
 
     function handleRoomNameChange(event: any) {
