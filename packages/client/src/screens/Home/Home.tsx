@@ -6,7 +6,6 @@ import { RoomAvailable } from 'colyseus.js/lib/Room';
 import qs from 'querystringify';
 import React, { useEffect, useRef, useState } from 'react';
 import { Box, Separator, Space, View } from '../../components';
-import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { NameField } from './components/NameField';
 import { NewGameField } from './components/NewGameField';
@@ -19,9 +18,6 @@ export function HomeScreen({ navigate }: HomeScreenProps) {
     const clientRef = useRef<Client>();
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-    //
-    // Lifecycle
-    //
     useEffect(() => {
         try {
             const host = window.document.location.host.replace(/:.*/, '');
@@ -43,9 +39,6 @@ export function HomeScreen({ navigate }: HomeScreenProps) {
         };
     }, []);
 
-    //
-    // Utils
-    //
     async function updateRooms() {
         if (!clientRef.current) {
             return;
@@ -55,9 +48,6 @@ export function HomeScreen({ navigate }: HomeScreenProps) {
         setRooms(rooms);
     }
 
-    //
-    // Handlers
-    //
     function handleRoomCreate(name: string, maxPlayers: number, map: string, mode: GameMode) {
         const playerName = localStorage.getItem('playerName') || '';
 
@@ -102,8 +92,6 @@ export function HomeScreen({ navigate }: HomeScreenProps) {
                 <RoomsList rooms={rooms} onRoomClick={handleRoomClick} />
                 <Space size="xxs" />
             </Box>
-            <Space size="m" />
-            <Footer />
         </View>
     );
 }
