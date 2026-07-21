@@ -40,7 +40,7 @@ export function NewGameField({ onCreate }: NewGameFieldProps) {
                 <Space size="s" />
 
                 <View>
-                    <Button title="Créer la partie" text="Créer" onClick={handleCreate} />
+                    <Button title="Continuer" text="Continuer" onClick={handleCreate} />
                 </View>
             </View>
         </View>
