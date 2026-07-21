@@ -18,6 +18,21 @@ export function NameField({}: NameFieldProps) {
         setChanged(false);
     }
 
+    if (name && !changed) {
+        return (
+            <Box
+                style={{
+                    width: 500,
+                    maxWidth: '100%',
+                }}
+            >
+                <View flex>
+                    <Text>{`Bonjour, ${name} !`}</Text>
+                </View>
+            </Box>
+        );
+    }
+
     return (
         <Box
             style={{
@@ -26,7 +41,7 @@ export function NameField({}: NameFieldProps) {
             }}
         >
             <View flex>
-                <Text>{name ? `Bonjour, ${name} !` : 'Choisissez votre nom :'}</Text>
+                <Text>Choisissez votre nom :</Text>
             </View>
             <Space size="xs" />
             <Input value={name} placeholder="Name" maxLength={Constants.PLAYER_NAME_MAX} onChange={handleChange} />
