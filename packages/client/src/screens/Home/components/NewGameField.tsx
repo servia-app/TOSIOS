@@ -1,6 +1,6 @@
 import { Constants } from '@tosios/common';
 import React, { useState } from 'react';
-import { Button, Input, ListItem, Select, Space, Text, View } from '../../../components';
+import { Button, ListItem, Select, Space, Text, View } from '../../../components';
 
 const PlayersCountList: ListItem[] = Constants.ROOM_PLAYERS_SCALES.map((value) => ({
     value,
@@ -12,17 +12,11 @@ interface NewGameFieldProps {
 }
 
 export function NewGameField({ onCreate }: NewGameFieldProps) {
-    const [name, setName] = useState('');
     const [maxPlayers, setMaxPlayers] = useState(PlayersCountList[0].value);
 
-    function handleRoomNameChange(event: any) {
-        const roomName = event.target.value;
-        localStorage.setItem('roomName', roomName);
-        setName(roomName);
-    }
-
     function handleCreate() {
-        onCreate(name, maxPlayers, 'gigantic', 'deathmatch');
+        const playerName = localStorage.getItem('playerName') || 'Joueur';
+        onCreate(`Partie de ${playerName}`, maxPlayers, 'gigantic', 'deathmatch');
     }
 
     return (
@@ -34,16 +28,6 @@ export function NewGameField({ onCreate }: NewGameFieldProps) {
             }}
         >
             <View style={{ width: '100%' }}>
-                <Text>Nom de la partie :</Text>
-                <Space size="xxs" />
-                <Input
-                    placeholder="Nom"
-                    value={name}
-                    maxLength={Constants.ROOM_NAME_MAX}
-                    onChange={handleRoomNameChange}
-                />
-                <Space size="s" />
-
                 <Text>Nombre de joueurs maximal :</Text>
                 <Space size="xxs" />
                 <Select
